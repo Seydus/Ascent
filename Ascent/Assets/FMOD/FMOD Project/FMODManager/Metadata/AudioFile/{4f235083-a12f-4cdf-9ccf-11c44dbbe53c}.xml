@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{4f235083-a12f-4cdf-9ccf-11c44dbbe53c}">
+		<property name="assetPath">
+			<value>Background/zapsplat_nature.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>296.23200000000003</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{f4556448-4f31-46a4-87ba-68c320bb475c}</destination>
+		</relationship>
+	</object>
+</objects>
