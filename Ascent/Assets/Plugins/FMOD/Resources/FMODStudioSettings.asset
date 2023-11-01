@@ -478,6 +478,7 @@ MonoBehaviour:
   Plugins: []
   MasterBanks:
   - Master
+  - Master
   Banks: []
   BanksToLoad: []
   LiveUpdatePort: 9264

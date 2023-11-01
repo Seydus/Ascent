@@ -27,6 +27,7 @@ public enum CPC_EAfterLoop
 [System.Serializable]
 public class CPC_Point
 {
+
     public Vector3 position;
     public Quaternion rotation;
     public Vector3 handleprev;
@@ -37,11 +38,17 @@ public class CPC_Point
     public AnimationCurve positionCurve;
     public bool chained;
 
-    //Change position or rotation **Saidus**
     public CPC_Point(Vector3 pos, Quaternion rot)
     {
         position = pos;
         rotation = rot;
+        handleprev = Vector3.back;
+        handlenext = Vector3.forward;
+        curveTypeRotation = CPC_ECurveType.EaseInAndOut;
+        rotationCurve = AnimationCurve.EaseInOut(0,0,1,1);
+        curveTypePosition = CPC_ECurveType.Linear;
+        positionCurve = AnimationCurve.Linear(0,0,1,1);
+        chained = true;
     }
 }
 
@@ -248,7 +255,7 @@ public class CPC_CameraPath : MonoBehaviour
         return index + 1;
     }
 
-    public Vector3 GetBezierPosition(int pointIndex, float time)
+    Vector3 GetBezierPosition(int pointIndex, float time)
     {
         float t = points[pointIndex].positionCurve.Evaluate(time);
         int nextIndex = GetNextIndex(pointIndex);
